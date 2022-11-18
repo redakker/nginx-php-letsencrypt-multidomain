@@ -52,3 +52,10 @@ for i in "${!domain_list[@]}"; do
     --noninteractive \
     --verbose || true
 done
+
+# Run the crontab just in case when we have domains
+if [ -n "$domain_list" ]; then
+    crontab -l | { cat; echo "0 */12 * * * root certbot -q renew && nginx -s reload"; } | crontab -
+    cron
+fi
+

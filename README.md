@@ -21,7 +21,7 @@ You need to fill up one environment file, run the docker-compose wait couple of 
  - creates a nginx config file for the domains
  - generate a self-signed certificate first for the domains
  - generate on-the-fly Let's Encrypt certificate for each domain
- - create a cron job for renew the certificates (under construction)
+ - create a cron job for renew the certificates
  
  # F.A.Q
  - what if I want to add a local virtual host

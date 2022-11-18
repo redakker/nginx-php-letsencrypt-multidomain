@@ -1,0 +1,34 @@
+version: '3'
+services:
+  web:
+    # image: nginx:latest
+    build: ./nginx
+    container_name: web
+    restart: always
+    depends_on:
+      - php
+    ports:
+      - 8080:80
+      - 443:443
+    volumes:
+      - ./www:/www
+      - ./sites:/etc/nginx/conf.d/
+    links:
+      - php
+    env_file: ./docker.env
+
+  php: #Listening on port 9000
+    image: php:7-fpm
+    container_name: php
+    restart: always
+    volumes:
+        - ./www:/www
+
+# for test only
+  esphome:
+    container_name: esphome
+    image: esphome/esphome  
+    restart: always
+    privileged: true
+    ports:
+      - "6052:6052"

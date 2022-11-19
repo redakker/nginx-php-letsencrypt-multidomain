@@ -2,7 +2,7 @@
 
 !!! This repo is under construction and testing !!!
 
-This Docker compose was ispired by [evgeniy-khist](https://github.com/evgeniy-khist). The solution uses some parts of his code.
+This Docker compose was ispired by [evgeniy-khist](https://github.com/evgeniy-khist). The solution uses some parts of his code. I've added more automation and made it more compact (Nginx contains certbot and cron too).
 
 This solution covers Nginx with Php running possibilities for more than one virtual hosts (domains). Each an every domain could have a Let's Encrypt certificate which are retrieved automatically.
 You need to fill up one environment (docker.env) file, run the docker-compose wait couple of minutes and you are done. Sounds easy, right? It is.

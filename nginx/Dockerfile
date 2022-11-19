@@ -11,7 +11,7 @@ RUN apt-get update \
     && mkdir -p /scripts /templates
 
 COPY site.conf.tpl /templates
-COPY *.sh /scripts
+COPY *.sh /scripts/
 
 
 RUN chmod +x /scripts/*.sh

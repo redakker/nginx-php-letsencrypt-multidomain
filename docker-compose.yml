@@ -8,11 +8,12 @@ services:
     depends_on:
       - php
     ports:
-      - 8080:80
+      - 80:80
       - 443:443
     volumes:
       - ./www:/www
       - ./sites:/etc/nginx/conf.d/
+      - ./certs:/etc/letsencrypt/live/
     links:
       - php
     env_file: ./docker.env
